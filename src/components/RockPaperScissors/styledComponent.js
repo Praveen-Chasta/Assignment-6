@@ -7,6 +7,10 @@ export const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
 `
+export const MainHeading = styled.h1`
+  font-family: 'Roboto';
+  color: #ffffff;
+`
 
 export const ResultContainer = styled.div`
   padding: 20px;

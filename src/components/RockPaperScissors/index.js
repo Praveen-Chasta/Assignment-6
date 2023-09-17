@@ -9,6 +9,7 @@ import 'reactjs-popup/dist/index.css'
 import GameOptions from '../GameOptions'
 
 import {
+  MainHeading,
   AppContainer,
   ResultContainer,
   OptionsContainer,
@@ -72,7 +73,7 @@ class RockPaperScissors extends Component {
     const {userInput, gameInput} = this.state
 
     if (userInput === gameInput) {
-      this.setState({gameStatus: gameStatusConstants.inProgress})
+      this.setState({gameStatus: gameStatusConstants.draw})
     } else if (userInput === 'ROCK') {
       if (gameInput === 'SCISSORS') {
         this.setState(prevState => ({
@@ -143,14 +144,14 @@ class RockPaperScissors extends Component {
       <GameResultViewContainer>
         <SelectedOptionsContainer>
           <GameUserOptionContainer>
-            <GameParticipantText>You</GameParticipantText>
+            <GameParticipantText>YOU</GameParticipantText>
             <GameParticipantChoiceImage
               src={userChoiceObject.imageUrl}
               alt="your choice"
             />
           </GameUserOptionContainer>
           <GameUserOptionContainer>
-            <GameParticipantText>Other</GameParticipantText>
+            <GameParticipantText>OPPONENT</GameParticipantText>
             <GameParticipantChoiceImage
               src={gameChoiceObject.imageUrl}
               alt="opponent choice"
@@ -181,21 +182,21 @@ class RockPaperScissors extends Component {
       <GameResultViewContainer>
         <SelectedOptionsContainer>
           <GameUserOptionContainer>
-            <GameParticipantText>You</GameParticipantText>
+            <GameParticipantText>YOU</GameParticipantText>
             <GameParticipantChoiceImage
               src={userChoiceObject.imageUrl}
               alt="your choice"
             />
           </GameUserOptionContainer>
           <GameUserOptionContainer>
-            <GameParticipantText>Other</GameParticipantText>
+            <GameParticipantText>OPPONENT</GameParticipantText>
             <GameParticipantChoiceImage
               src={gameChoiceObject.imageUrl}
               alt="opponent choice"
             />
           </GameUserOptionContainer>
         </SelectedOptionsContainer>
-        <ResultText>YOU LOST</ResultText>
+        <ResultText>YOU LOSE</ResultText>
         <PlayAgainButton type="button" onClick={this.onClickGoToGameView}>
           PLAY AGAIN
         </PlayAgainButton>
@@ -219,14 +220,14 @@ class RockPaperScissors extends Component {
       <GameResultViewContainer>
         <SelectedOptionsContainer>
           <GameUserOptionContainer>
-            <GameParticipantText>You</GameParticipantText>
+            <GameParticipantText>YOU</GameParticipantText>
             <GameParticipantChoiceImage
               src={userChoiceObject.imageUrl}
               alt="your choice"
             />
           </GameUserOptionContainer>
           <GameUserOptionContainer>
-            <GameParticipantText>Other</GameParticipantText>
+            <GameParticipantText>OPPONENT</GameParticipantText>
             <GameParticipantChoiceImage
               src={gameChoiceObject.imageUrl}
               alt="opponent choice"
@@ -262,6 +263,7 @@ class RockPaperScissors extends Component {
 
     return (
       <AppContainer>
+        <MainHeading>Rock Paper Scissors</MainHeading>
         <ResultContainer>
           <OptionsContainer>
             <Option>
